@@ -4,7 +4,7 @@ module SocialMetaTags
   module ViewHelpers
     def social_meta_tags
       meta_data = RequestStore.store[:social_meta_tags] || {}
-      meta_data = MetaMapper.new(meta_data).construct
+      meta_data = MetaMapper.new(meta_data, request).construct
       meta_html = Renderer.new(meta_data).render
 
       meta_html.html_safe

@@ -3,15 +3,20 @@ require 'active_support/core_ext/hash'
 
 module SocialMetaTags
   class MetaMapper
-    attr_reader :meta_data
+    attr_reader :meta_data, :request
 
-    def initialize(meta_data)
+    def initialize(meta_data, request)
       @meta_data = meta_data.deep_dup
+      @request = request
     end
 
     def construct
-      meta_data.reverse_merge!(default_meta_data)
+      meta_data[:og] ||= {}
+      meta_data[:twitter] ||= {}
+      meta_data[:og].reverse_merge!(default_meta_data[:og])
+      meta_data[:twitter].reverse_merge!(default_meta_data[:twitter])
 
+      # Fields that can be copied into og or twitter
       overall_fields = meta_data.slice(:title, :description, :image)
 
       meta_data[:og] = meta_data[:og].reverse_merge(overall_fields)
@@ -34,9 +39,10 @@ module SocialMetaTags
 
     def default_meta_data
       {
-        title: "",
-        description: "",
-        og: {},
+        og: {
+          site_name: Options.site_name,
+          url: request.original_url
+        },
         twitter: {}
       }
     end
