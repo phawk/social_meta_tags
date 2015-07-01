@@ -7,8 +7,8 @@ RSpec.describe SocialMetaTags::MetaMapper do
       meta_data = SocialMetaTags::MetaMapper.new({title: "MyApp", description: "My wonderful app"}).construct
 
       expect(meta_data[:title]).to eq("MyApp")
-      expect(meta_data[:og][:title]).to eq("MyApp")
-      expect(meta_data[:twitter][:title]).to eq("MyApp")
+      expect(meta_data[:"og:title"]).to eq("MyApp")
+      expect(meta_data[:"twitter:title"]).to eq("MyApp")
     end
   end
 
@@ -17,8 +17,8 @@ RSpec.describe SocialMetaTags::MetaMapper do
       meta_data = SocialMetaTags::MetaMapper.new({title: "MyApp", description: "My wonderful app", og: {title: "MyApp OG"}}).construct
 
       expect(meta_data[:title]).to eq("MyApp")
-      expect(meta_data[:og][:title]).to eq("MyApp OG")
-      expect(meta_data[:twitter][:title]).to eq("MyApp")
+      expect(meta_data[:"og:title"]).to eq("MyApp OG")
+      expect(meta_data[:"twitter:title"]).to eq("MyApp")
     end
   end
 end
