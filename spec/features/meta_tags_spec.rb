@@ -8,6 +8,7 @@ RSpec.describe "Meta tags", type: :feature do
 
   scenario "are output with <%= social_meta_tags %> helper" do
     visit "/"
+    expect(meta_content_for("title")).to eq("MyApp")
     expect(meta_content_for("description")).to eq("My wonderful app")
   end
 end

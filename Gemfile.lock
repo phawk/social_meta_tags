@@ -3,6 +3,7 @@ PATH
   specs:
     social_meta_tags (0.0.1)
       rails (~> 4.2.2)
+      request_store
 
 GEM
   remote: https://rubygems.org/
@@ -96,6 +97,7 @@ GEM
       rake (>= 0.8.7)
       thor (>= 0.18.1, < 2.0)
     rake (10.4.2)
+    request_store (1.1.0)
     rspec-core (3.3.1)
       rspec-support (~> 3.3.0)
     rspec-expectations (3.3.0)
