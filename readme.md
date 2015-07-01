@@ -1,5 +1,7 @@
 # Social meta tags
 
+[![Build Status](https://travis-ci.org/phawk/social_meta_tags.svg?branch=master)](https://travis-ci.org/phawk/social_meta_tags)
+
 Easily add [Open graph](https://developers.facebook.com/docs/sharing/webmasters#markup) and [Twitter card](https://dev.twitter.com/cards/markup) `<meta>` tags to your Rails 4 application.
 
 ## Installation
