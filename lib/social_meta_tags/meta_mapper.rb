@@ -40,7 +40,7 @@ module SocialMetaTags
     def default_meta_data
       {
         og: {
-          site_name: Options.site_name,
+          site_name: SocialMetaTags.configuration.site_name || "[social_meta_tags] No Site Name",
           url: request.original_url
         },
         twitter: {}

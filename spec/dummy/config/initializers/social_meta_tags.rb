@@ -1,1 +1,3 @@
-SocialMetaTags::Options.site_name = "MySite!"
+SocialMetaTags.configure do |config|
+	config.site_name = "MySite!"
+end
