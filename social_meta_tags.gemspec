@@ -19,11 +19,11 @@ Gem::Specification.new do |s|
 
   s.require_paths = ["lib"]
 
-  s.add_dependency "rails", "~> 4.2.2"
+  s.add_dependency "rails", ">= 5.0"
   s.add_dependency "request_store"
 
   s.add_development_dependency "sqlite3"
-  s.add_development_dependency "rspec-rails", "~> 3.3.1"
-  s.add_development_dependency "capybara", "~> 2.0"
+  s.add_development_dependency "rspec-rails", "~> 3.8.2"
+  s.add_development_dependency "capybara", "~> 3.27"
   s.add_development_dependency "byebug"
 end
